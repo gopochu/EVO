@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 681029012997885290}
   - component: {fileID: 681029012997885292}
   - component: {fileID: 681029012997885291}
-  - component: {fileID: 4373741086659846742}
+  - component: {fileID: 6891478634979874699}
   m_Layer: 0
   m_Name: Oil Mineshaft
   m_TagString: Untagged
@@ -63,22 +63,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e94880a2ef8687418d31a563fd954dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderPriority: 
   _oilGain: 1
   _oilInterval: 3
   _metalGain: 0
   _metalInterval: 1
   Storehouse: {fileID: 0}
---- !u!210 &4373741086659846742
-SortingGroup:
+--- !u!70 &6891478634979874699
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681029012997885289}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006407261, y: 0.9902667}
+  m_Size: {x: 1.6325464, y: 2.2233365}
+  m_Direction: 0
 --- !u!1 &681029013142354236
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +96,7 @@ GameObject:
   - component: {fileID: 681029013142354237}
   - component: {fileID: 681029013142354238}
   m_Layer: 0
-  m_Name: Hexagon Pointed-Top
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,8 +110,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681029013142354236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 681029012997885290}
@@ -152,14 +158,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f5a9092761d231341a3fa74e7209e239, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8828125, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

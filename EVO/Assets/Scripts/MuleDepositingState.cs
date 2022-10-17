@@ -5,12 +5,13 @@ using UnityEngine;
 public class MuleDepositingState : MuleBaseState
 {
     private float _timer;
-    public override void EnterState(MuleStateManager manager)
+
+    public override void EnterState(Mule manager)
     {
         _timer = 0;
     }
 
-    public override void UpdateState(MuleStateManager manager)
+    public override void UpdateState(Mule manager)
     {
         if(_timer < manager.TimeToDeposit)
         {
@@ -18,7 +19,7 @@ public class MuleDepositingState : MuleBaseState
             return;
         }
 
-        var targetStorehouse = manager.MainTarget.GetComponent<Storehouse>();
+        var targetStorehouse = manager.MainTarget.GetComponent<Storage>();
 
         targetStorehouse.IncreaseMetal(manager.Storehouse.MetalCount);
         manager.Storehouse.DecreaseMetal((manager.Storehouse.MetalCount));
@@ -27,10 +28,10 @@ public class MuleDepositingState : MuleBaseState
         manager.Storehouse.DecreaseOil((manager.Storehouse.OilCount));
 
         manager.ToggleTarget();
-        manager.SwitchState(manager.WalkingState);
+        manager.SwitchState(manager.DeliveringState);
     }
 
-    public override void FixedUpdateState(MuleStateManager manager)
+    public override void FixedUpdateState(Mule manager)
     {
         
     }

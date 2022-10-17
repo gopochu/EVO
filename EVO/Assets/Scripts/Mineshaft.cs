@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Storehouse))]
-public class Mineshaft : MonoBehaviour
+[RequireComponent(typeof(Storage))]
+public class Mineshaft : Unit
 {
     [Header("Oil")]
     [SerializeField] private int _oilGain = 1;
@@ -15,11 +15,20 @@ public class Mineshaft : MonoBehaviour
     [SerializeField] private float _metalInterval = 1f;
     private float _metalTimer = 0;
 
-    [HideInInspector] public Storehouse Storehouse;
+    [HideInInspector] public Storage Storehouse;
 
     private void Awake() 
     {
-        Storehouse = GetComponent<Storehouse>();
+        Storehouse = GetComponent<Storage>();
+        InitializeOrderPriority();
+    }
+
+    private void InitializeOrderPriority()
+    {
+        OrderPriority = new List<Order>()
+        {
+            Order.Deliver
+        };
     }
 
     private void Update() 
@@ -42,5 +51,30 @@ public class Mineshaft : MonoBehaviour
         if(_metalTimer < _metalInterval) return;
         _metalTimer = 0;
         Storehouse.IncreaseMetal(_metalGain);
+    }
+
+    public override bool WalkOrder(Vector2 position)
+    {
+        return false;
+    }
+
+    public override bool FollowOrder(GameObject target)
+    {
+        return false;
+    }
+
+    public override bool AttackOrder(GameObject target)
+    {
+        return false;
+    }
+
+    public override bool ToggleElectricityOrder()
+    {
+        return false;
+    }
+
+    public override bool DeliverOrder(Mineshaft mineshaft)
+    {
+        return false;
     }
 }

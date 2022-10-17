@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class MuleWalkingState : MuleBaseState
 {
-    public override void FixedUpdateState(MuleStateManager manager)
+    public override void EnterState(Mule manager)
     {
-        if(manager.transform.position == manager.MainTarget.transform.position)
+        
+    }
+
+    public override void FixedUpdateState(Mule manager)
+    {
+        if((Vector2)manager.transform.position == manager.WalkDestination)
         {
-           if(manager.MainTarget == manager.BaseStorehouse)
-           {
-                manager.SwitchState(manager.DepositingState);
-           }
-           else if(manager.MainTarget == manager.Mineshaft)
-           {
-                manager.SwitchState(manager.CollectingState);
-           }
-           return;
+            manager.SwitchState(manager.WalkingState);
+            return;
         }
-
-        var currentPosition = manager.transform.position;
-        var targetPosition = manager.MainTarget.transform.position;
-        var movingVector = Vector2.MoveTowards(currentPosition, targetPosition, manager.Speed * Time.fixedDeltaTime);
+        var movingVector = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, manager.Speed * Time.fixedDeltaTime);
         manager.Rigidbody2D.MovePosition(movingVector);
-
     }
 
-    public override void UpdateState(MuleStateManager manager)
-    {
-       
-    }
-
-    public override void EnterState(MuleStateManager manager)
+    public override void UpdateState(Mule manager)
     {
         
     }

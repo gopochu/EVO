@@ -2,74 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Storehouse : MonoBehaviour
+[RequireComponent(typeof(Storage))]
+public class Storehouse : Unit
 {
-    [Header("Oil")]
-    [SerializeField] private int _oilCount = 0;
-    [SerializeField] public int OilMax = 100;
-
-    [Header("Metal")]
-    [SerializeField] private int _metalCount = 0;
-    [SerializeField] public int MetalMax = 100;
-
-    public int OilCount
+    public static Storehouse Instance;
+    public override bool AttackOrder(GameObject target)
     {
-        get => _oilCount;
-    }
-    public int MetalCount
-    {
-        get => _metalCount;
+        return false;
     }
 
-    /// <summary>
-    /// Вычитает из количества металла value. Если value больше количества металла, то количество приравнивается к 0.
-    /// </summary>
-    /// <return>
-    /// Если value больше количества металла, то возвращает разницу между ними, иначе - 0.
-    /// </return>
-    public int DecreaseMetal(int value)
+    public override bool DeliverOrder(Mineshaft mineshaft)
     {
-        var result = value - _metalCount;
-        _metalCount = Mathf.Max(0, _metalCount - value);
-        return Mathf.Max(result, 0);
+        return false;
     }
 
-    /// <summary>
-    ///Вычитает из количества нефти value. Если value больше количества нефти, то количество приравнивается к 0.
-    /// </summary>
-    /// <return>
-    ///Если value больше количества нефти, то возвращает разницу между ними, иначе - 0.
-    /// </return>
-    public int DecreaseOil(int value)
+    public override bool FollowOrder(GameObject target)
     {
-        var result = value - _oilCount;
-        _oilCount = Mathf.Max(0, _oilCount - value);
-        return Mathf.Max(result, 0);
+        return false;
     }
 
-    /// <summary>
-    /// Увеличивает количество металла на value. Если количество больше максимума, то количество приравнивается к максимуму.
-    /// </summary>
-    /// <return>
-    /// Возвращает количество металла, которое не удалось положить на склад.
-    /// </return>
-    public int IncreaseMetal(int value)
+    public override bool ToggleElectricityOrder()
     {
-        var result = _metalCount + value - MetalMax;
-        _metalCount = Mathf.Min(MetalMax, _metalCount + value);
-        return Mathf.Max(0, result);
+        return false;
     }
 
-    /// <summary>
-    /// Увеличивает количество нефти на value. Если количество больше максимума, то количество приравнивается к максимуму.
-    /// </summary>
-    /// <return>
-    /// Возвращает количество нефти, которое не удалось положить на склад.
-    /// </return>
-    public int IncreaseOil(int value)
+    public override bool WalkOrder(Vector2 position)
     {
-        var result = _oilCount + value -OilMax;
-        _oilCount = Mathf.Min(OilMax, _oilCount + value);
-        return Mathf.Max(0, result);
+        return false;
     }
 }

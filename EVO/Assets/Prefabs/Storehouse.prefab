@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403179801585787493}
   - component: {fileID: 1947230181749647773}
-  - component: {fileID: 4060249730851085736}
+  - component: {fileID: 758222678951169965}
   m_Layer: 0
   m_Name: Storehouse
   m_TagString: Untagged
@@ -50,17 +50,19 @@ MonoBehaviour:
   OilMax: 100
   _metalCount: 0
   MetalMax: 100
---- !u!210 &4060249730851085736
-SortingGroup:
+--- !u!114 &758222678951169965
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403179801585787494}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88351c9ac1326347bf987005d1b7c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrderPriority: 
 --- !u!1 &403179801641304122
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,8 +88,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403179801641304122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 403179801585787493}
@@ -134,8 +136,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8fc4b636211fee140a29b7d98abbe348, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,4 +146,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1

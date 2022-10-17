@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class MuleBaseState
 {
-    public abstract void EnterState(MuleStateManager manager);
+    public abstract void EnterState(Mule manager);
 
-    public abstract void FixedUpdateState(MuleStateManager manager);
+    public abstract void FixedUpdateState(Mule manager);
     
-    public abstract void UpdateState(MuleStateManager manager);
+    public abstract void UpdateState(Mule manager);
     
 }
