@@ -45,8 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef79f44532579c04497ef5fb840957cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedUnit: []
-  lol: {fileID: 0}
+  MainCamera: {fileID: 0}
+  _cameraMoveSpeed: 20
+  _cameraFastMoveSpeed: 40
+  _cameraZoomSpeed: 2
+  _minCameraZoom: 5
+  _maxCameraZoom: 30
+  _radiusIncrement: 1.5
+  _positionsIncrement: 5
 --- !u!114 &8170034951027889258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +79,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8170034951027889259}
+        m_TargetAssemblyTypeName: PlayerSelector, Assembly-CSharp
+        m_MethodName: MoveCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a264097f-3dbe-47e3-872c-b1ff194d9ba0
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -148,6 +166,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 999f9efc-d613-40c8-8624-c62c7c5a3094
     m_ActionName: Player/AdditionalChoose[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8170034951027889259}
+        m_TargetAssemblyTypeName: PlayerSelector, Assembly-CSharp
+        m_MethodName: ZoomCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 356fb488-70b6-499b-b909-cbd9bd17c44b
+    m_ActionName: Player/Zoom[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6765985e-72b9-466e-9384-8e027b0c393e
+    m_ActionName: Player/Sprint[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

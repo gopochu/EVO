@@ -26,24 +26,18 @@ public class Mule : Unit
     [HideInInspector] public Rigidbody2D Rigidbody2D;
     [HideInInspector] public Vector2 WalkDestination;
 
+    private List<Order> _orderPriority = new List<Order>()
+        {
+            Order.Follow
+        };
+
     private void Awake() 
     {
         Storehouse = GetComponent<Storage>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         _currentState = IdleState;
-        InitializeOrderPriority();
         BaseStorehouse = FindObjectOfType<Storehouse>().gameObject;
-        
     }
-
-    private void InitializeOrderPriority()
-    {
-        OrderPriority = new List<Order>()
-        {
-            Order.Follow
-        };
-    }
-
 
     private void Update() 
     {
@@ -101,5 +95,10 @@ public class Mule : Unit
         MainTarget = Mineshaft;
         SwitchState(DeliveringState);
         return true;
+    }
+
+    public override List<Order> GetOrderPriority()
+    {
+        return _orderPriority;
     }
 }

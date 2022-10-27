@@ -14,21 +14,16 @@ public class Mineshaft : Unit
     [SerializeField] private int _metalGain = 1;
     [SerializeField] private float _metalInterval = 1f;
     private float _metalTimer = 0;
+    private List<Order> _orderPriority =  new List<Order>()
+        {
+            Order.Deliver
+        };
 
     [HideInInspector] public Storage Storehouse;
 
     private void Awake() 
     {
         Storehouse = GetComponent<Storage>();
-        InitializeOrderPriority();
-    }
-
-    private void InitializeOrderPriority()
-    {
-        OrderPriority = new List<Order>()
-        {
-            Order.Deliver
-        };
     }
 
     private void Update() 
@@ -76,5 +71,10 @@ public class Mineshaft : Unit
     public override bool DeliverOrder(Mineshaft mineshaft)
     {
         return false;
+    }
+
+    public override List<Order> GetOrderPriority()
+    {
+       return _orderPriority;
     }
 }

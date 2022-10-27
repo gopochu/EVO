@@ -6,6 +6,7 @@ using UnityEngine;
 public class Storehouse : Unit
 {
     public static Storehouse Instance;
+    private List<Order> _orderPriority = new List<Order>();
     public override bool AttackOrder(GameObject target)
     {
         return false;
@@ -29,5 +30,10 @@ public class Storehouse : Unit
     public override bool WalkOrder(Vector2 position)
     {
         return false;
+    }
+
+    public override List<Order> GetOrderPriority()
+    {
+        return _orderPriority;
     }
 }
