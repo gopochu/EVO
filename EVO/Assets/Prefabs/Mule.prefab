@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217916812872151191}
   - component: {fileID: 5217916812872151188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &5217916814693790016
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 5217916814693790044}
   - component: {fileID: 5217916814693790047}
   - component: {fileID: 5217916814693790046}
-  - component: {fileID: 1827374440828730928}
-  - component: {fileID: 8592995655321142869}
   - component: {fileID: 1572297614993354130}
-  m_Layer: 0
+  - component: {fileID: 1827374440828730928}
+  - component: {fileID: 8791410397019897022}
+  m_Layer: 6
   m_Name: Mule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,39 +158,6 @@ MonoBehaviour:
   OilMax: 20
   _metalCount: 0
   MetalMax: 20
---- !u!114 &1827374440828730928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217916814693790016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db225c594ec9c3147ac5fc45a689d428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OrderPriority: 
-  BaseStorehouse: {fileID: 0}
-  Mineshaft: {fileID: 0}
-  MainTarget: {fileID: 0}
-  TimeToDeposit: 2
-  TimeToCollect: 3
-  Speed: 7
-  Storehouse: {fileID: 0}
-  Rigidbody2D: {fileID: 0}
-  WalkDestination: {x: 0, y: 0}
---- !u!210 &8592995655321142869
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217916814693790016}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!70 &1572297614993354130
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +174,54 @@ CapsuleCollider2D:
   m_Offset: {x: -0.01344094, y: 0.73843086}
   m_Size: {x: 1.5665027, y: 1.3245279}
   m_Direction: 1
+--- !u!114 &1827374440828730928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217916814693790016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db225c594ec9c3147ac5fc45a689d428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBuilding: 0
+  BaseStorehouse: {fileID: 0}
+  Mineshaft: {fileID: 0}
+  MainTarget: {fileID: 0}
+  TimeToDeposit: 2
+  TimeToCollect: 3
+  Speed: 7
+  Storehouse: {fileID: 0}
+  Rigidbody2D: {fileID: 0}
+  WalkDestination: {x: 0, y: 0}
+--- !u!114 &8791410397019897022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217916814693790016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e93f49ca0572b42b086915fb537b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _currentHealth: 10
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1827374440828730928}
+        m_TargetAssemblyTypeName: Mule, Assembly-CSharp
+        m_MethodName: HandleDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,6 +24,7 @@ public class PlayerSelector : MonoBehaviour
     private void LateUpdate() 
     {
         UpdateCamera();
+        //Debug.Log(_isCameraSpedUp);
     }
 
     public void Choose(InputAction.CallbackContext context)
@@ -108,7 +108,6 @@ public class PlayerSelector : MonoBehaviour
     {
         if(!context.performed) return;
         var zoomDirection = -context.ReadValue<Vector2>().normalized.y * _cameraZoomSpeed;
-        Debug.Log(zoomDirection);
         MainCamera.orthographicSize = Mathf.Clamp(MainCamera.orthographicSize + zoomDirection, _minCameraZoom, _maxCameraZoom);
     }
 

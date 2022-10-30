@@ -101,4 +101,9 @@ public class Mule : Unit
     {
         return _orderPriority;
     }
+
+    public override void HandleDeath()
+    {
+        Destroy(gameObject);
+    }
 }

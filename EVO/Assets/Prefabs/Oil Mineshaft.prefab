@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 681029012997885290}
   - component: {fileID: 681029012997885292}
-  - component: {fileID: 681029012997885291}
   - component: {fileID: 6891478634979874699}
+  - component: {fileID: 681029012997885291}
+  - component: {fileID: 6118169158111966691}
   m_Layer: 0
   m_Name: Oil Mineshaft
   m_TagString: Untagged
@@ -51,24 +52,6 @@ MonoBehaviour:
   OilMax: 50
   _metalCount: 0
   MetalMax: 0
---- !u!114 &681029012997885291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681029012997885289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e94880a2ef8687418d31a563fd954dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OrderPriority: 
-  _oilGain: 1
-  _oilInterval: 3
-  _metalGain: 0
-  _metalInterval: 1
-  Storehouse: {fileID: 0}
 --- !u!70 &6891478634979874699
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -85,6 +68,53 @@ CapsuleCollider2D:
   m_Offset: {x: 0.006407261, y: 0.9902667}
   m_Size: {x: 1.6325464, y: 2.2233365}
   m_Direction: 0
+--- !u!114 &681029012997885291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681029012997885289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e94880a2ef8687418d31a563fd954dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBuilding: 0
+  _oilGain: 1
+  _oilInterval: 3
+  _metalGain: 0
+  _metalInterval: 1
+  Storehouse: {fileID: 0}
+--- !u!114 &6118169158111966691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681029012997885289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e93f49ca0572b42b086915fb537b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 20
+  _currentHealth: 20
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 681029012997885291}
+        m_TargetAssemblyTypeName: Mineshaft, Assembly-CSharp
+        m_MethodName: HandleDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &681029013142354236
 GameObject:
   m_ObjectHideFlags: 0

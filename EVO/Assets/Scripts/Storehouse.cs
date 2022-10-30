@@ -36,4 +36,9 @@ public class Storehouse : Unit
     {
         return _orderPriority;
     }
+    
+    public override void HandleDeath()
+    {
+        Destroy(this);
+    }
 }

@@ -13,7 +13,8 @@ public class Health : MonoBehaviour
     public void DecreaseHealth(int value)
     {
         _currentHealth -= value;
-        if (_currentHealth <= 0) OnDeath.Invoke();
+        if (_currentHealth <= 0) 
+            OnDeath.Invoke();
     }
 
     public void IncreaseHealth(int value)

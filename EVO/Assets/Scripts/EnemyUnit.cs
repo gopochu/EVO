@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public abstract class EnemyUnit : MonoBehaviour, ITargetable
 {
-    protected abstract void Attack(Health target);
     private List<Order> _orderPriority = new List<Order>()
     {
         Order.Attack,

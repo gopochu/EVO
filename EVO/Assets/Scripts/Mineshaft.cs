@@ -48,6 +48,11 @@ public class Mineshaft : Unit
         Storehouse.IncreaseMetal(_metalGain);
     }
 
+    public override void HandleDeath()
+    {
+        Destroy(gameObject);
+    }
+
     public override bool WalkOrder(Vector2 position)
     {
         return false;
