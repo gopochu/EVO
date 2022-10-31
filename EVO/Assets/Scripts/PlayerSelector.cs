@@ -157,17 +157,12 @@ public class PlayerSelector : MonoBehaviour
         var currentAngle = 0f;
         for(var i = 0; i < positionsCount; i++)
         {
-            positionList.Add(RotateVector(new Vector2(1, 0) * radius, currentAngle));
+            positionList.Add((new Vector2(1, 0) * radius).RotateVector(currentAngle));
             currentAngle += angleIncrement;
         }
         return positionList;
     }
-
-    private Vector2 RotateVector(Vector2 vector, float angle)
-    {
-        return Quaternion.Euler(0,0,angle) * vector;
-    }
-
+    
     private Vector3 GetMousePosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);

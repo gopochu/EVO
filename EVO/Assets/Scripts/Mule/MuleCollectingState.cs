@@ -21,10 +21,10 @@ public class MuleCollectingState : MuleBaseState
 
         var storehouse = manager.MainTarget.GetComponent<Storage>();
         
-        manager.Storehouse.IncreaseMetal(storehouse.MetalCount);
+        manager.Storage.IncreaseMetal(storehouse.MetalCount);
         storehouse.DecreaseMetal(storehouse.MetalCount);
         
-        manager.Storehouse.IncreaseOil(storehouse.OilCount);
+        manager.Storage.IncreaseOil(storehouse.OilCount);
         storehouse.DecreaseOil(storehouse.OilCount);
 
         manager.ToggleTarget();

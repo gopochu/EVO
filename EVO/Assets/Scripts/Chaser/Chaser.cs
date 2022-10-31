@@ -6,7 +6,11 @@ using UnityEngine;
 public class Chaser : EnemyUnit
 {
     [SerializeField] public Health Target;
+
+    [Header("Chase Options")]
     [SerializeField] public float Speed;
+    [SerializeField] public float BypassAngleIncrement;
+    [SerializeField] public LayerMask EnemyLayer;
 
     [Header("Damage Options")]
     [SerializeField] public float DistanceToHit;

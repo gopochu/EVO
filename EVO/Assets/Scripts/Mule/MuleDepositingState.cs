@@ -21,11 +21,11 @@ public class MuleDepositingState : MuleBaseState
 
         var targetStorehouse = manager.MainTarget.GetComponent<Storage>();
 
-        targetStorehouse.IncreaseMetal(manager.Storehouse.MetalCount);
-        manager.Storehouse.DecreaseMetal((manager.Storehouse.MetalCount));
+        targetStorehouse.IncreaseMetal(manager.Storage.MetalCount);
+        manager.Storage.DecreaseMetal((manager.Storage.MetalCount));
 
-        targetStorehouse.IncreaseOil(manager.Storehouse.OilCount);
-        manager.Storehouse.DecreaseOil((manager.Storehouse.OilCount));
+        targetStorehouse.IncreaseOil(manager.Storage.OilCount);
+        manager.Storage.DecreaseOil((manager.Storage.OilCount));
 
         manager.ToggleTarget();
         manager.SwitchState(manager.DeliveringState);

@@ -7,9 +7,9 @@ using UnityEngine;
 public class Mule : Unit
 {
     [Header("Targets")]
-    [SerializeField] public GameObject BaseStorehouse;
-    [SerializeField] public GameObject Mineshaft;
-    [SerializeField] public GameObject MainTarget;
+    [SerializeField] public Storehouse BaseStorehouse;
+    [SerializeField] public Mineshaft Mineshaft;
+    [SerializeField] public Unit MainTarget;
     
     [Header("Other")]
     [SerializeField] public float TimeToDeposit = 2f;
@@ -22,7 +22,7 @@ public class Mule : Unit
     [HideInInspector] public MuleBaseState IdleState = new MuleIdleState();
     [HideInInspector] public MuleBaseState WalkingState = new MuleWalkingState();
     [HideInInspector] private MuleBaseState _currentState;
-    [HideInInspector] public Storage Storehouse;
+    [HideInInspector] public Storage Storage;
     [HideInInspector] public Rigidbody2D Rigidbody2D;
     [HideInInspector] public Vector2 WalkDestination;
 
@@ -33,10 +33,15 @@ public class Mule : Unit
 
     private void Awake() 
     {
-        Storehouse = GetComponent<Storage>();
+        Storage = GetComponent<Storage>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         _currentState = IdleState;
-        BaseStorehouse = FindObjectOfType<Storehouse>().gameObject;
+        BaseStorehouse = FindObjectOfType<Storehouse>();
+    }
+
+    private void Start()
+    {
+        BaseStorehouse.GetComponent<Health>().OnDeath.AddListener(ForceIdleState);
     }
 
     private void Update() 
@@ -91,7 +96,8 @@ public class Mule : Unit
 
     public override bool DeliverOrder(Mineshaft mineshaft)
     {
-        Mineshaft = mineshaft.gameObject;
+        Mineshaft = mineshaft;
+        Mineshaft.GetComponent<Health>().OnDeath.AddListener(ForceIdleState);
         MainTarget = Mineshaft;
         SwitchState(DeliveringState);
         return true;
@@ -105,5 +111,10 @@ public class Mule : Unit
     public override void HandleDeath()
     {
         Destroy(gameObject);
+    }
+
+    private void ForceIdleState()
+    {
+        SwitchState(IdleState);
     }
 }

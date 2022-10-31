@@ -11,7 +11,6 @@ public abstract class EnemyUnit : MonoBehaviour, ITargetable
         Order.Follow
     };
 
-
     public GameObject GetGameObject()
     {
         return gameObject;

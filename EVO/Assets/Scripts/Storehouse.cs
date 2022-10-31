@@ -39,6 +39,6 @@ public class Storehouse : Unit
     
     public override void HandleDeath()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
