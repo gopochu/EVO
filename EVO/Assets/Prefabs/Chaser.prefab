@@ -176,7 +176,7 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  DistanceToHit: 20
+  DistanceToHit: 3
   Damage: 10
   PunchCooldown: 30
   CurrentPunchCooldown: 0
