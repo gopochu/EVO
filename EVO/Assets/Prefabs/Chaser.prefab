@@ -177,8 +177,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   DistanceToHit: 3
-  Damage: 10
-  PunchCooldown: 30
+  Damage: 0
+  PunchCooldown: 1
   CurrentPunchCooldown: 0
   Rigidbody2D: {fileID: 0}
 --- !u!58 &8709524107178375342
