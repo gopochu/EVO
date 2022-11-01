@@ -67,6 +67,10 @@ MonoBehaviour:
   dependencies:
   - dependency: {fileID: -944628639613478452, guid: 0d1f5f49c3ada984192f6071708f5c30, type: 3}
     instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 07ac36958791853448200183429b63b4, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 80019f8ef4e7c6245a265c0e5e55ea90, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 7bb005473b040cf45b334b90df6d45c2, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: f5a9092761d231341a3fa74e7209e239, type: 3}
@@ -75,7 +79,11 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 5217916814693790016, guid: 907eef4a1ec5c5741be51a42ebfd6821, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 8e1773cb5d8b0a246b9779953cd0c86f, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 8fc4b636211fee140a29b7d98abbe348, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: f1e3b951548efcc4cafa631f15631fa3, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 681029012997885289, guid: facaba6f3235e4c46a2e13f510c97b13, type: 3}
     instantiationMode: 0
@@ -83,6 +91,8 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 518dad1edef285545829148e165c786f, type: 2}
+    instantiationMode: 1
   - dependency: {fileID: 1605916104363774208, guid: c971a7c113e3dff438e18cb8ae1cbd3a, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 403179801585787494, guid: 0b99af8e7b5353945bb13ab62e46ffe7, type: 3}
@@ -93,5 +103,7 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 8170034951027889257, guid: c8215e11e36c39747aebfffec3389875, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 28830b66856e5ba4f9b4fe16966d6e15, type: 2}
+    instantiationMode: 1
   templatePipeline: {fileID: 0}
   addToDefaults: 1
