@@ -13,7 +13,7 @@ public class MuleWalkingState : MuleBaseState
     {
         if((Vector2)manager.transform.position == manager.WalkDestination)
         {
-            manager.SwitchState(manager.WalkingState);
+            manager.SwitchState(manager.IdleState);
             return;
         }
         var movingVector = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, manager.Speed * Time.fixedDeltaTime);

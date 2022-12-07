@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public abstract class EnemyUnit : MonoBehaviour, ITargetable
 {
+    [SerializeField] public Health Target;
     private List<Order> _orderPriority = new List<Order>()
     {
         Order.Attack,

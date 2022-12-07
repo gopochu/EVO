@@ -63,7 +63,7 @@ public class Mineshaft : Unit
         return false;
     }
 
-    public override bool AttackOrder(GameObject target)
+    public override bool AttackOrder(Health target)
     {
         return false;
     }

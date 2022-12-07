@@ -16,12 +16,12 @@ public class Mule : Unit
     [SerializeField] public float TimeToCollect = 3f;
     [SerializeField] public float Speed = 10f;
 
-    [HideInInspector] public MuleBaseState DeliveringState = new MuleDeliveringState();
-    [HideInInspector] public MuleBaseState CollectingState = new MuleCollectingState();
-    [HideInInspector] public MuleBaseState DepositingState = new MuleDepositingState();
-    [HideInInspector] public MuleBaseState IdleState = new MuleIdleState();
-    [HideInInspector] public MuleBaseState WalkingState = new MuleWalkingState();
-    [HideInInspector] private MuleBaseState _currentState;
+    public MuleBaseState DeliveringState = new MuleDeliveringState();
+    public MuleBaseState CollectingState = new MuleCollectingState();
+    public MuleBaseState DepositingState = new MuleDepositingState();
+    public MuleBaseState IdleState = new MuleIdleState();
+    public MuleBaseState WalkingState = new MuleWalkingState();
+    private MuleBaseState _currentState;
     [HideInInspector] public Storage Storage;
     [HideInInspector] public Rigidbody2D Rigidbody2D;
     [HideInInspector] public Vector2 WalkDestination;
@@ -39,8 +39,9 @@ public class Mule : Unit
         BaseStorehouse = FindObjectOfType<Storehouse>();
     }
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         BaseStorehouse.GetComponent<Health>().OnDeath.AddListener(ForceIdleState);
     }
 
@@ -84,7 +85,7 @@ public class Mule : Unit
         return false;
     }
 
-    public override bool AttackOrder(GameObject target)
+    public override bool AttackOrder(Health target)
     {
         return false;
     }

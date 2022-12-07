@@ -21,7 +21,7 @@ public class ChaserAttackState : ChaserBaseState
             manager.SwitchState(manager.IdleState);
             return;
         }
-        if(Vector2.Distance(manager.transform.position, manager.Target.transform.position) > manager.DistanceToHit)
+        if(Vector2.Distance(manager.transform.position, manager.Target.transform.position) > manager.DistanceToHit + manager.Target.AgentRadius)
         {
             manager.SwitchState(manager.ChaseState);
             return;
@@ -29,7 +29,11 @@ public class ChaserAttackState : ChaserBaseState
         if(manager.CurrentPunchCooldown == 0)
         {
             manager.CurrentPunchCooldown = manager.PunchCooldown;
-            manager.Target.DecreaseHealth(manager.Damage);
+            manager.Target.SetHealth(manager.Target.CurrentHealth - manager.Damage);
         }
+    }
+    public override void ExitState(Chaser manager)
+    {
+        
     }
 }

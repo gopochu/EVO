@@ -5,18 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Chaser : EnemyUnit
 {
-    [SerializeField] public Health Target;
-
-    [Header("Chase Options")]
+    [Header("Walk Options")]
     [SerializeField] public float Speed;
-    [SerializeField] public float BypassAngleIncrement;
-    [SerializeField] public LayerMask EnemyLayer;
 
-    [Header("Damage Options")]
+    [Header("Attack Options")]
     [SerializeField] public float DistanceToHit;
+    [SerializeField] public float DistanceToStopHit;
     [SerializeField] public int Damage;
     [SerializeField] public float PunchCooldown;
+    [SerializeField] public float ScanningEnemiesFrequency;
+
     [HideInInspector] public float CurrentPunchCooldown;
+
+    [Header("Chase Options")]
+    [SerializeField] public float DirectionUpdateFrequency;
+    [SerializeField] public float ObstacleWeight;
+    [SerializeField] public float MinObstacleDistance;
+    [SerializeField] public float MaxObstacleDistance;
+    [SerializeField] public LayerMask ObstacleLayer;
+    [SerializeField] public LayerMask AllyLayer;
+
 
     private ChaserBaseState _currentState;
     public ChaserIdleState IdleState = new ChaserIdleState();
@@ -43,19 +51,24 @@ public class Chaser : EnemyUnit
 
     private void FixedUpdate()
     {
-        Debug.Log(_currentState);
         _currentState.FixedUpdateState(this);
     }
 
     public void SwitchState(ChaserBaseState state)
     {
+        _currentState?.ExitState(this);
         _currentState = state;
         _currentState.EnterState(this);
     }
 
     private void UpdateTimer()
     {
-        CurrentPunchCooldown = Mathf.Max(0, CurrentPunchCooldown -= Time.deltaTime);
+        CurrentPunchCooldown = Mathf.Max(0, CurrentPunchCooldown - Time.deltaTime);
+    }
+
+    public void HandleDeath()
+    {
+        Destroy(this.gameObject);
     }
 
 }

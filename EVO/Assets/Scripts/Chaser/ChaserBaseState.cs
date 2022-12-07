@@ -7,4 +7,5 @@ public abstract class ChaserBaseState
     public abstract void EnterState(Chaser manager);
     public abstract void UpdateState(Chaser manager);
     public abstract void FixedUpdateState(Chaser manager);
+    public abstract void ExitState(Chaser manager);
 }

@@ -5,20 +5,25 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth;
+    [SerializeField] public int MaxHealth;
     [SerializeField] private int _currentHealth;
+    [SerializeField] public float AgentRadius;
     [SerializeField] public UnityEvent OnDeath;
+    [SerializeField] public UnityEvent<GameObject> OnAttack;
+
     public int CurrentHealth {get => _currentHealth;}
     
-    public void DecreaseHealth(int value)
+    public void SetHealth(int value)
     {
-        _currentHealth -= value;
+        _currentHealth = Mathf.Min(value, MaxHealth);
         if (_currentHealth <= 0) 
             OnDeath.Invoke();
     }
 
-    public void IncreaseHealth(int value)
+    public void SetHealth(int value, GameObject attacker)
     {
-        _currentHealth = Mathf.Min(_currentHealth + value, _maxHealth);
+        if (value < _currentHealth)
+            OnAttack.Invoke(attacker);
+        SetHealth(value);
     }
 }

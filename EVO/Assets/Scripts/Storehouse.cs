@@ -7,7 +7,12 @@ public class Storehouse : Unit
 {
     public static Storehouse Instance;
     private List<Order> _orderPriority = new List<Order>();
-    public override bool AttackOrder(GameObject target)
+
+    private void Awake() 
+    {
+        Instance = this;
+    }
+    public override bool AttackOrder(Health target)
     {
         return false;
     }
