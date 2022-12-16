@@ -36,7 +36,8 @@ public class ChaserChaseState : ChaserBaseState
             manager.SwitchState(manager.AttackState);
             return;
         }
-        manager.Rigidbody2D.MovePosition((Vector2)manager.transform.position + _moveDirection * manager.Speed * Time.fixedDeltaTime);
+        
+        manager.Rigidbody2D.MovePosition((Vector2)manager.transform.position + _moveDirection * ((IWalking)manager).Speed * Time.fixedDeltaTime);
     }
 
     public override void UpdateState(Chaser manager)
