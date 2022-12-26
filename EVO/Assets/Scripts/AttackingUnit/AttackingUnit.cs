@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AttackingUnit : Unit
 {
-    [Header("Walk Options")]
-    [SerializeField] public float Speed;
+    //[Header("Walk Options")]
+    //[SerializeField] public float Speed;
 
     [Header("Attack Options")]
     [SerializeField] public int Damage;

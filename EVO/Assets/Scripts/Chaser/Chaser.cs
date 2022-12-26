@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Chaser : EnemyUnit
 {
-    [Header("Walk Options")]
-    [SerializeField] public float Speed;
+    //[Header("Walk Options")]
+    //[SerializeField] public float Speed;
 
     [Header("Attack Options")]
     [SerializeField] public float DistanceToHit;

@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Speed: 10
+  Walking:
+    _baseSpeed: 2
+    _speedMultiplier: 5
   DistanceToHit: 0.5
   DistanceToStopHit: 0
   Damage: 2
@@ -265,7 +267,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.1}
   serializedVersion: 2

@@ -21,7 +21,7 @@ public class AttackingUnitWalkState : AttackingUnitBaseState
             manager.SwitchState(manager.IdleState);
             return;
         }
-        var walkDirection = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, manager.Speed * Time.fixedDeltaTime);
+        var walkDirection = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, ((IWalking)manager).Speed * Time.fixedDeltaTime);
         manager.Rigidbody2D.MovePosition(walkDirection);
     }
 
