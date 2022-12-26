@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e93f49ca0572b42b086915fb537b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  _currentHealth: 10
+  MaxHealth: 50
+  _currentHealth: 50
   AgentRadius: 1
   OnDeath:
     m_PersistentCalls:
@@ -222,7 +222,19 @@ MonoBehaviour:
         m_CallState: 2
   OnAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1605916104363774209}
+        m_TargetAssemblyTypeName: Chaser, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1605916104363774209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,9 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Walking:
-    _baseSpeed: 2
-    _speedMultiplier: 5
+  baseSpeed: 2
+  speedMultiplier: 5
   DistanceToHit: 0.5
   DistanceToStopHit: 0
   Damage: 2

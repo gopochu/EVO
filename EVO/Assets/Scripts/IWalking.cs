@@ -7,8 +7,8 @@ public interface IWalking
     
     public float Speed => BaseSpeed * SpeedMultiplier;
     
-    public void ChangeSpeedMultiplier(float coef)
+    public void ChangeSpeedMultiplier(float multiplier)
     {
-        SpeedMultiplier *= coef;
+        SpeedMultiplier *= multiplier;
     }
 }

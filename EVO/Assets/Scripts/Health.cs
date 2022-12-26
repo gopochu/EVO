@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
 
     public void SetHealth(int value, GameObject attacker)
     {
+        Debug.Log(attacker);
         if (value < _currentHealth)
             OnAttack.Invoke(attacker);
         SetHealth(value);

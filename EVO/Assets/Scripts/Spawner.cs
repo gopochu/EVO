@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : EnemyUnit
 {
     [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private float _spawnDelay;
@@ -28,5 +28,10 @@ public class Spawner : MonoBehaviour
             newEnemy.GetComponent<EnemyUnit>().Target = SpawnerManager.Instance.PlayerUnits[randomId].GetComponent<Health>();
             yield return new WaitForSeconds(_spawnDelay);
         }
+    }
+
+    public void HandleDeath()
+    {
+        Destroy(this.gameObject);
     }
 }

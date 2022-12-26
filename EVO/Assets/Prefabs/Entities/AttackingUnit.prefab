@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e93f49ca0572b42b086915fb537b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  _currentHealth: 10
+  MaxHealth: 20
+  _currentHealth: 20
   AgentRadius: 1
   OnDeath:
     m_PersistentCalls:
@@ -104,7 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBuilding: 0
-  Speed: 10
+  baseSpeed: 2.3
+  speedMultiplier: 5
   Damage: 5
   DistanceToHit: 1
   DistanceToStopHit: 1

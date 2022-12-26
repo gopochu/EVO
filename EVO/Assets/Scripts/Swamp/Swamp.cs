@@ -8,12 +8,14 @@ public class Swamp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log(col);
         var walking = col.gameObject.GetComponent<IWalking>();
         walking?.ChangeSpeedMultiplier(speedMultiplier);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log(other);
         var walking = other.gameObject.GetComponent<IWalking>();
         walking?.ChangeSpeedMultiplier(1/speedMultiplier);
     }

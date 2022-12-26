@@ -71,4 +71,12 @@ public class Chaser : EnemyUnit
         Destroy(this.gameObject);
     }
 
+    public void OnAttack(GameObject attacker)
+    {
+        //Debug.Log(attacker);
+        var health = attacker.GetComponent<Health>();
+        Target = health;
+        SwitchState(AttackState);
+    }
+
 }
