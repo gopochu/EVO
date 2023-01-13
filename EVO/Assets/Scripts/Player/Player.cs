@@ -121,6 +121,10 @@ public class Player : MonoBehaviour
         {
             var clickedPoint = GetMousePosition();
             _startPosition = clickedPoint;
+            foreach(var unit in _selectedUnits)
+            {
+                if(unit.HighlightArea != null) unit.HighlightArea.SetActive(false);
+            }
         }
         else if(context.canceled)
         {
@@ -133,6 +137,10 @@ public class Player : MonoBehaviour
                 Unit unitComponent;
                 if(!collider.transform.parent.TryGetComponent<Unit>(out unitComponent)) continue;
                 _selectedUnits.Add(unitComponent);
+            }
+            foreach(var unit in _selectedUnits)
+            {
+                if(unit.HighlightArea != null) unit.HighlightArea.SetActive(true);
             }
         }
     }

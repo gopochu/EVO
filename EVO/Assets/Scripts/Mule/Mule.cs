@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Storage))]
 public class Mule : Unit
 {
+    [SerializeField] private bool _isInMenu;
+
     [Header("Targets")]
     [SerializeField] public Storehouse BaseStorehouse;
     [SerializeField] public Mineshaft Mineshaft;
@@ -36,6 +38,7 @@ public class Mule : Unit
         Storage = GetComponent<Storage>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         _currentState = IdleState;
+        if(_isInMenu) _currentState = DeliveringState;
         BaseStorehouse = FindObjectOfType<Storehouse>();
     }
 

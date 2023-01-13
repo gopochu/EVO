@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Move : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void MoveToScene(int id)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(1);
     }
 }

@@ -15,6 +15,7 @@ public abstract class Unit : MonoBehaviour, ITargetable, IWalking
     public abstract bool DeliverOrder(Mineshaft mineshaft);
     public abstract List<Order> GetOrderPriority();
     public abstract void HandleDeath();
+    public GameObject HighlightArea;
     
     public GameObject GetGameObject()
     {
