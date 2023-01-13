@@ -10,12 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] public float AgentRadius;
     [SerializeField] public UnityEvent OnDeath;
     [SerializeField] public UnityEvent<GameObject> OnAttack;
+    [SerializeField] public UnityEvent OnHealthChanged;
 
     public int CurrentHealth {get => _currentHealth;}
     
     public void SetHealth(int value)
     {
         _currentHealth = Mathf.Min(value, MaxHealth);
+        OnHealthChanged.Invoke();
         if (_currentHealth <= 0) 
             OnDeath.Invoke();
     }

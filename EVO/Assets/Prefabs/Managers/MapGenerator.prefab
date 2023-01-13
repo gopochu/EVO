@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7033256654833405644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7033256654833405646}
+  - component: {fileID: 7033256654833405645}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7033256654833405646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033256654833405644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7033256654833405645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033256654833405644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a1dc97cf3394943b94e9b3d4bb87ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - MapObject: {fileID: 6715346633052367514, guid: 22445af8512c00348a356bac8bb90fa4, type: 3}
+    Occurencies: 60
+    MinRadius: 0
+    MaxRadius: 150
+  - MapObject: {fileID: 5878709850648662825, guid: 150c9da2d3f491e429628a3bb9501519, type: 3}
+    Occurencies: 60
+    MinRadius: 0
+    MaxRadius: 150
+  - MapObject: {fileID: 7304504163780124680, guid: 4eab8b6ab9cb3ed4e9065bf6775a03ce, type: 3}
+    Occurencies: 60
+    MinRadius: 0
+    MaxRadius: 150
+  - MapObject: {fileID: 2999575536343686194, guid: c22483d5508537b4da9c0194f825ac47, type: 3}
+    Occurencies: 10
+    MinRadius: 80
+    MaxRadius: 150
+  - MapObject: {fileID: 6682074506332106561, guid: 74362022aa48ece41a5c804500f10356, type: 3}
+    Occurencies: 20
+    MinRadius: 50
+    MaxRadius: 150
+  - MapObject: {fileID: 8050339184511156371, guid: d65584c270f7f3a4d8004b05eec569ac, type: 3}
+    Occurencies: 30
+    MinRadius: 0
+    MaxRadius: 150
+  - MapObject: {fileID: 3503475108839432522, guid: 7f2a486271d464449908b42107de5e1e, type: 3}
+    Occurencies: 5
+    MinRadius: 120
+    MaxRadius: 150
