@@ -136,7 +136,7 @@ MonoBehaviour:
   speedMultiplier: 5
   _enemyPrefab: {fileID: 1605916104363774208, guid: c971a7c113e3dff438e18cb8ae1cbd3a, type: 3}
   _spawnDelay: 1
-  _startEnemyNumber: 5
+  _startEnemyNumber: 3
 --- !u!114 &8096466759177458029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +168,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6349764319957386810
