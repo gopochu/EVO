@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.57}
   serializedVersion: 2
-  m_Radius: 0.68
+  m_Radius: 1
 --- !u!1 &5217916812872151190
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +240,7 @@ MonoBehaviour:
   HighlightArea: {fileID: 6241294282656389586}
   baseSpeed: 2
   speedMultiplier: 5
+  _isInMenu: 0
   BaseStorehouse: {fileID: 0}
   Mineshaft: {fileID: 0}
   MainTarget: {fileID: 0}
@@ -285,6 +286,7 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+  HealthBar: {fileID: 0}
 --- !u!1 &6241294282656389586
 GameObject:
   m_ObjectHideFlags: 0
