@@ -173,7 +173,10 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   HealthBar: {fileID: 0}
+=======
+>>>>>>> 43e5ccdbf81b561e1696bdb230284e9a26d561e1
 --- !u!1 &6349764319957386810
 GameObject:
   m_ObjectHideFlags: 0
