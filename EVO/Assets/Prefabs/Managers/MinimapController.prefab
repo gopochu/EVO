@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550042834364282136}
   - component: {fileID: 3229484579571548005}
+  - component: {fileID: 5469580531429502599}
   m_Layer: 0
   m_Name: MinimapController
   m_TagString: Untagged
@@ -44,3 +45,147 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b971cfd738f1a6844a7cf4e76b245119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MinimapCamera: {fileID: 0}
+  MinimapSize: 35
+--- !u!114 &5469580531429502599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459939252469549672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0d1f5f49c3ada984192f6071708f5c30, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a264097f-3dbe-47e3-872c-b1ff194d9ba0
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c26fe0a-1667-4d54-af64-db6ec8956c71
+    m_ActionName: Player/Choose[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 999f9efc-d613-40c8-8624-c62c7c5a3094
+    m_ActionName: Player/AdditionalChoose[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 356fb488-70b6-499b-b909-cbd9bd17c44b
+    m_ActionName: Player/Zoom[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6765985e-72b9-466e-9384-8e027b0c393e
+    m_ActionName: Player/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ada3ad7c-2f5e-43ba-8aba-d86f2260aeb6
+    m_ActionName: Player/OpenShop[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3229484579571548005}
+        m_TargetAssemblyTypeName: MinimapController, Assembly-CSharp
+        m_MethodName: SelectPlayerBuildings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6355604c-8615-4b36-8214-4833a6d00e33
+    m_ActionName: Player/ShowBuildings[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3229484579571548005}
+        m_TargetAssemblyTypeName: MinimapController, Assembly-CSharp
+        m_MethodName: SelectPlayerUnits
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2361a4a7-b132-4bbf-813a-f86e3c6982e8
+    m_ActionName: Player/ShowUnits[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3229484579571548005}
+        m_TargetAssemblyTypeName: MinimapController, Assembly-CSharp
+        m_MethodName: SelectSpawners
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bb800d85-b00e-4742-988b-510ca96fc4f9
+    m_ActionName: Player/ShowSpawners[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e522139e-9941-4fc8-974d-7ab5c4c8671d
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 580aaa6c-0bba-4590-b5ef-fd63e95d9a53
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 279578d8-ebc1-4cce-84e1-af2f3006941a
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c6bc179-0d3f-4ac3-94e8-a04a50fb82c1
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0cecb665-438d-4a63-b861-17111971803b
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2553a0b6-83d3-4720-a5d8-1bad47caf55e
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e22e4d1c-7e7c-4d62-b378-0928a442d645
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a3d0bfd2-1843-4087-8912-8ad6ebd693f5
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e09ee5bd-330f-4f01-a507-627d00775d77
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c5468ec-7114-4c2c-a8f4-8e59b7b342ed
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

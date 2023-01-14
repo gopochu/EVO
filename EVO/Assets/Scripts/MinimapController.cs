@@ -6,7 +6,11 @@ using UnityEngine.InputSystem;
 public class MinimapController : MonoBehaviour
 {
     public static MinimapController Instance;
+    public GameObject MinimapCamera;
     public Dictionary<MinimapObjectType, List<GameObject>> MinimapObjectsDictionary;
+    public float MinimapSize;
+
+    public MinimapObjectType CurrentObjectType;
     private void Awake() 
     {
         if(Instance == null)
@@ -20,35 +24,42 @@ public class MinimapController : MonoBehaviour
         MinimapObjectsDictionary = new Dictionary<MinimapObjectType, List<GameObject>>();
         foreach(var type in Enum.GetValues(typeof(MinimapObjectType)))
             MinimapObjectsDictionary[(MinimapObjectType)type] = new List<GameObject>();
-
+        CurrentObjectType = MinimapObjectType.Spawner;
     }
 
+    private void Start() 
+    {
+        UpdateMinimapObjectType();
+    }
     public void SelectPlayerBuildings(InputAction.CallbackContext context)
     {
         if(!context.started) return;
-        SelectObjectType(MinimapObjectType.PlayerBuilding);
+        CurrentObjectType = MinimapObjectType.PlayerBuilding;
+        UpdateMinimapObjectType();
     }
 
     public void SelectPlayerUnits(InputAction.CallbackContext context)
     {
         if(!context.started) return;
-        SelectObjectType(MinimapObjectType.PlayerUnit);
+        CurrentObjectType = MinimapObjectType.PlayerUnit;
+        UpdateMinimapObjectType();
     }
 
     public void SelectSpawners(InputAction.CallbackContext context)
     {
         if(!context.started) return;
-        SelectObjectType(MinimapObjectType.Spawner);
+        CurrentObjectType = MinimapObjectType.Spawner;
+        UpdateMinimapObjectType();
     }
 
 
-    private void SelectObjectType(MinimapObjectType selectedType)
+    private void UpdateMinimapObjectType()
     {
         foreach(var type in Enum.GetValues(typeof(MinimapObjectType)))
         {
-            if((MinimapObjectType)type == selectedType)
+            if((MinimapObjectType)type == CurrentObjectType)
             {
-                foreach(var gameObject in MinimapObjectsDictionary[selectedType])
+                foreach(var gameObject in MinimapObjectsDictionary[CurrentObjectType])
                 {
                     gameObject.SetActive(true);
                 }
