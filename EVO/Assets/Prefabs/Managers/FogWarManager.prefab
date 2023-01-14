@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2939b983144ac4446b2e84061042ec68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fog: {fileID: 6553351210595960347, guid: e09368f6ac0043d46833e3a17f8c9783, type: 3}
+  startxCord: -220
+  startyCord: 221
+  offSet: 55
