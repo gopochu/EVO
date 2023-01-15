@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnerManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpawnerManager : MonoBehaviour
     [HideInInspector] public static SpawnerManager Instance;
     [HideInInspector] public List<Unit> PlayerUnits;
     [HideInInspector] public List<Spawner> Spawners;
+    public UnityEvent OnSpawnersEmpty;
 
     [Header("Health Options")]
     [SerializeField] private int _enemyHealthIncrement;
@@ -58,5 +60,13 @@ public class SpawnerManager : MonoBehaviour
         var randomId = (int)Random.Range(0, Spawners.Count);
         if(Spawners.Count > 0)
             Spawners[randomId].Spawn(_currentEnemyCount, _currentHealth);
+    }
+    
+    public void CheckSpawnerCount()
+    {
+        if(Spawners.Count == 0)
+        {
+
+        }
     }
 }

@@ -36,6 +36,7 @@ public class Spawner : EnemyUnit
 
     private void OnDestroy() {
         SpawnerManager.Instance.Spawners.Remove(this);
+        SpawnerManager.Instance.CheckSpawnerCount();
         StopAllCoroutines();
     }
 }

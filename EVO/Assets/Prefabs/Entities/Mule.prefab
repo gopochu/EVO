@@ -219,7 +219,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01344094, y: 0.73843086}
@@ -251,6 +251,7 @@ MonoBehaviour:
   Storage: {fileID: 0}
   Rigidbody2D: {fileID: 0}
   WalkDestination: {x: 0, y: 0}
+  _spriteRenderer: {fileID: 5217916812872151188}
 --- !u!114 &8791410397019897022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +288,6 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
-  HealthBar: {fileID: 0}
 --- !u!1 &6138710648259761748
 GameObject:
   m_ObjectHideFlags: 0

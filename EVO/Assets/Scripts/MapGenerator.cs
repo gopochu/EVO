@@ -32,7 +32,7 @@ public class MapGenerator : MonoBehaviour
                     }
                     newPosition = UnityEngine.Random.insideUnitCircle * mapObjectInfo.MaxRadius;
                 }
-                Debug.Log(newPosition);
+                //Debug.Log(newPosition);
                 Instantiate(mapObjectInfo.MapObject, newPosition, Quaternion.identity);
             }
         }

@@ -16,7 +16,7 @@ public class Mule : Unit
     [Header("Other")]
     [SerializeField] public float TimeToDeposit = 2f;
     [SerializeField] public float TimeToCollect = 3f;
-    [SerializeField] public float Speed = 10f;
+    //[SerializeField] public float Speed = 10f;
 
     public MuleBaseState DeliveringState = new MuleDeliveringState();
     public MuleBaseState CollectingState = new MuleCollectingState();
@@ -27,6 +27,10 @@ public class Mule : Unit
     [HideInInspector] public Storage Storage;
     [HideInInspector] public Rigidbody2D Rigidbody2D;
     [HideInInspector] public Vector2 WalkDestination;
+    private Vector3 _newPos;
+    private Vector3 _prevPos;
+    private Vector3 _objVelocity;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private List<Order> _orderPriority = new List<Order>()
         {
@@ -40,6 +44,8 @@ public class Mule : Unit
         _currentState = IdleState;
         if(_isInMenu) _currentState = DeliveringState;
         BaseStorehouse = FindObjectOfType<Storehouse>();
+        //_spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     public override void Start()
@@ -51,11 +57,13 @@ public class Mule : Unit
     private void Update() 
     {
         _currentState.UpdateState(this);
+        ChangeSpriteDirection();
     }
 
     private void FixedUpdate()
     {
         _currentState.FixedUpdateState(this);
+        CalculateVelocity();
     }
 
     public void SwitchState(MuleBaseState state)
@@ -120,5 +128,31 @@ public class Mule : Unit
     private void ForceIdleState()
     {
         SwitchState(IdleState);
+    }
+
+    private void CalculateVelocity()
+    {
+        _newPos = transform.position; 
+        _objVelocity = (_newPos - _prevPos) / Time.fixedDeltaTime;  
+        _prevPos = _newPos;
+    }
+    private void ChangeSpriteDirection()
+    {
+        if(_objVelocity.x > 0) 
+            _spriteRenderer.transform.localScale =  new Vector3
+            (1,
+            _spriteRenderer.transform.localScale.y,
+            _spriteRenderer.transform.localScale.z);
+        //Debug.Log(_objVelocity)
+        else if(_objVelocity.x < 0)
+        {
+            _spriteRenderer.transform.localScale =  new Vector3
+            (-1,
+            _spriteRenderer.transform.localScale.y,
+            _spriteRenderer.transform.localScale.z
+            );
+        }
+            
+       //Debug.Log(_objVelocity);
     }
 }

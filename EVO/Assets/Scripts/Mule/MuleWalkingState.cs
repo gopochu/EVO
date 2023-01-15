@@ -16,7 +16,7 @@ public class MuleWalkingState : MuleBaseState
             manager.SwitchState(manager.IdleState);
             return;
         }
-        var movingVector = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, manager.Speed * Time.fixedDeltaTime);
+        var movingVector = Vector2.MoveTowards(manager.transform.position, manager.WalkDestination, ((IWalking)manager).Speed * Time.fixedDeltaTime);
         manager.Rigidbody2D.MovePosition(movingVector);
     }
 

@@ -22,7 +22,7 @@ public class MuleDeliveringState : MuleBaseState
         }
 
         var currentPosition = manager.transform.position;
-        var movingVector = Vector2.MoveTowards(currentPosition, targetPosition, manager.Speed * Time.fixedDeltaTime);
+        var movingVector = Vector2.MoveTowards(currentPosition, targetPosition, ((IWalking)manager).Speed * Time.fixedDeltaTime);
         manager.Rigidbody2D.MovePosition(movingVector);
 
     }

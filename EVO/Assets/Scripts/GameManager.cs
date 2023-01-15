@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    [SerializeField] private GameObject WinCanvas;
+    [SerializeField] private GameObject FailCanvas;
     
     private void Awake() 
     {
@@ -15,25 +17,22 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Update() 
-    {
-        if(Storehouse.Instance == null)
-        {
-            ExecuteFailState();
-        }
-        else if(SpawnerManager.Instance.Spawners.Count == 0)
-        {
-            ExecuteWinState();
-        }
+    private void Start() {
+        Storehouse.Instance.GetComponent<Health>().OnDeath.AddListener(ExecuteFailState);
+        SpawnerManager.Instance.OnSpawnersEmpty.AddListener(ExecuteWinState);
     }
 
     private void ExecuteFailState()
     {
         Debug.Log("You Lost!");
+        Destroy(Player.Instance);
+        FailCanvas.SetActive(true);
     }
 
     private void ExecuteWinState()
     {
         Debug.Log("You won");
+        Destroy(Player.Instance);
+        WinCanvas.SetActive(true);
     }
 }

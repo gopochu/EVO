@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
         _slider = GetComponent<Slider>();
         _slider.maxValue = _objectHealth.MaxHealth;
         _slider.value = _objectHealth.MaxHealth;
-        Debug.Log(_objectHealth);
+        //Debug.Log(_objectHealth);
         _objectHealth.OnHealthChanged.AddListener(UpdateHealth);
     }
 
