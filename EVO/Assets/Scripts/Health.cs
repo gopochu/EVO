@@ -13,14 +13,11 @@ public class Health : MonoBehaviour
     [SerializeField] public UnityEvent OnHealthChanged;
 
     public int CurrentHealth {get => _currentHealth;}
-    public HealthBar HealthBar;
+
     
     public void SetHealth(int value)
     {
         _currentHealth = Mathf.Min(value, MaxHealth);
-        if (HealthBar != null)
-            HealthBar.SetHealth(_currentHealth);
-        
         OnHealthChanged.Invoke();
         if (_currentHealth <= 0) 
             OnDeath.Invoke();
@@ -28,7 +25,6 @@ public class Health : MonoBehaviour
 
     public void SetHealth(int value, GameObject attacker)
     {
-        Debug.Log(attacker);
         if (value < _currentHealth)
             OnAttack.Invoke(attacker);
         SetHealth(value);

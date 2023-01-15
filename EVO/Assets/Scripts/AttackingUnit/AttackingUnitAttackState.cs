@@ -33,7 +33,6 @@ public class AttackingUnitAttackState : AttackingUnitBaseState
         }
         if(manager.CurrentAttackCooldown == 0)
         {
-            Debug.Log(111);
             manager.CurrentAttackCooldown = manager.AttackCooldown;
             manager.Target.SetHealth(manager.Target.CurrentHealth - manager.Damage, manager.gameObject);
         }

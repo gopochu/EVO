@@ -6,23 +6,22 @@ public class Spawner : EnemyUnit
 {
     [SerializeField] private GameObject _enemyPrefab;
     [SerializeField] private float _spawnDelay;
-    [SerializeField] private int _startEnemyNumber;
 
     private void Start() {
         SpawnerManager.Instance.Spawners.Add(this);
     }
-    public void Spawn(float enemyNumberMultiplier, float healthMultiplier)
+    public void Spawn(float enemyNumber, int health)
     {
        StopAllCoroutines();
-       StartCoroutine(SpawnCoroutine(enemyNumberMultiplier, healthMultiplier));
+       StartCoroutine(SpawnCoroutine(enemyNumber, health));
     }
 
-    private IEnumerator SpawnCoroutine(float enemyNumberMultiplier, float healthMultiplier)
+    private IEnumerator SpawnCoroutine(float enemyCount, int health)
     {
-        for(var i = 0; i < _startEnemyNumber * enemyNumberMultiplier; i++)
+        for(var i = 0; i < enemyCount; i++)
         {
             var newEnemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            newEnemy.GetComponent<Health>().MaxHealth = (int) (newEnemy.GetComponent<Health>().MaxHealth * healthMultiplier);
+            newEnemy.GetComponent<Health>().MaxHealth = health;
             newEnemy.GetComponent<Health>().SetHealth(newEnemy.GetComponent<Health>().MaxHealth);
             var randomId = (int) Random.Range(0, SpawnerManager.Instance.PlayerUnits.Count);
             newEnemy.GetComponent<EnemyUnit>().Target = SpawnerManager.Instance.PlayerUnits[randomId].GetComponent<Health>();
@@ -33,5 +32,10 @@ public class Spawner : EnemyUnit
     public void HandleDeath()
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy() {
+        SpawnerManager.Instance.Spawners.Remove(this);
+        StopAllCoroutines();
     }
 }

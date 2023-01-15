@@ -8,13 +8,22 @@ public class SpawnerManager : MonoBehaviour
     [HideInInspector] public static SpawnerManager Instance;
     [HideInInspector] public List<Unit> PlayerUnits;
     [HideInInspector] public List<Spawner> Spawners;
-    [SerializeField] private float _enemyMultiplierIncrement;
-    [SerializeField] private float _enemyHealthIncrement;
-    [SerializeField] private float _currentEnemyMultiplier;
-    [SerializeField] private float _currentHealthMultiplier;
+
+    [Header("Health Options")]
+    [SerializeField] private int _enemyHealthIncrement;
+    [SerializeField] private int _healthIncrementWaveInterval;
+    [SerializeField] private int _currentHealth;
+
+    [Header("Count Options")]
+    [SerializeField] private float _enemyCountIncrement;
+    [SerializeField] private int _countIncrementWaveInterval;
+    [SerializeField] private float _currentEnemyCount;
+
+    [Header("Wave Options")]
     [SerializeField] private int _waveDelay;
     [SerializeField] private int _firstWaveDelay;
     private Coroutine _waveCoroutine;
+    private int _waveNumber = 1;
     
     private void Awake() 
     {
@@ -35,8 +44,11 @@ public class SpawnerManager : MonoBehaviour
         while(true)
         {
             ExecuteWave();
-            _currentEnemyMultiplier += _enemyMultiplierIncrement;
-            _currentHealthMultiplier += _enemyHealthIncrement;
+            _waveNumber++;
+            if(_waveNumber % _countIncrementWaveInterval == 0)
+                _currentEnemyCount += _enemyCountIncrement;
+            if(_waveNumber % _healthIncrementWaveInterval == 0)
+            _currentHealth += _enemyHealthIncrement;
             yield return new WaitForSeconds(_waveDelay);
         }
     }
@@ -45,6 +57,6 @@ public class SpawnerManager : MonoBehaviour
     {
         var randomId = (int)Random.Range(0, Spawners.Count);
         if(Spawners.Count > 0)
-            Spawners[randomId].Spawn(_currentEnemyMultiplier, _currentHealthMultiplier);
+            Spawners[randomId].Spawn(_currentEnemyCount, _currentHealth);
     }
 }

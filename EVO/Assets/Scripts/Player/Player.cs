@@ -166,7 +166,6 @@ public class Player : MonoBehaviour
         var unitSet = new HashSet<Unit>(_selectedUnits);
         foreach(var order in target.GetOrderPriority())
         {
-            Debug.Log(order);
             foreach(var unit in _selectedUnits)
                 switch(order)
                 {

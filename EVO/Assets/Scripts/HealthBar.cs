@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
-    public int MaxHP;
-
-    private void Awake()
+    private Slider _slider;
+    [SerializeField] private Health _objectHealth;
+    
+    private void Start()
     {
-        slider.maxValue = MaxHP;
-        slider.value = MaxHP;
+        _slider = GetComponent<Slider>();
+        _slider.maxValue = _objectHealth.MaxHealth;
+        _slider.value = _objectHealth.MaxHealth;
+        Debug.Log(_objectHealth);
+        _objectHealth.OnHealthChanged.AddListener(UpdateHealth);
     }
 
-    public void SetHealth(int hp)
+    public void UpdateHealth()
     {
-        slider.value = hp;
+        Debug.Log("PEnis");
+        _slider.value = _objectHealth.CurrentHealth;
     }
 }

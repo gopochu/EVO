@@ -8,7 +8,6 @@ public class MinimapObject : MonoBehaviour
 
     private void Start() 
     {
-        Debug.Log(MinimapController.Instance.MinimapObjectsDictionary);
         MinimapController.Instance.MinimapObjectsDictionary[ObjectType].Add(this.gameObject);
         if (MinimapController.Instance.CurrentObjectType != ObjectType) gameObject.SetActive(false);
     }

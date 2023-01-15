@@ -895,6 +895,67 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1363780116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363780118}
+  - component: {fileID: 1363780117}
+  m_Layer: 0
+  m_Name: Map Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1363780117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363780116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a1dc97cf3394943b94e9b3d4bb87ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - MapObject: {fileID: 5294032276492417112, guid: c04382a346dd556419d98b60f89d21a8, type: 3}
+    Occurencies: 5
+    MinRadius: 0
+    MaxRadius: 50
+  - MapObject: {fileID: 6971041626722715568, guid: bb1b101a003ec53449542f5ff1e81950, type: 3}
+    Occurencies: 5
+    MinRadius: 0
+    MaxRadius: 50
+  - MapObject: {fileID: 3462582068417786609, guid: ae3859fc6522e0a48a13564a7d3779e0, type: 3}
+    Occurencies: 5
+    MinRadius: 0
+    MaxRadius: 50
+  - MapObject: {fileID: 8050339184511156371, guid: d65584c270f7f3a4d8004b05eec569ac, type: 3}
+    Occurencies: 3
+    MinRadius: 0
+    MaxRadius: 50
+--- !u!4 &1363780118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363780116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.207848, y: -3.527625, z: 4.2281656}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1582272105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1539,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16383
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
