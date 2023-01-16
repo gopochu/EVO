@@ -1825,6 +1825,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3503475108839432522, guid: 7f2a486271d464449908b42107de5e1e, type: 3}
     - target: {fileID: 7033256654833405645, guid: 87a8b1e683f48f94b87d9b2f890348a2, type: 3}
+      propertyPath: Objects.Array.data[3].MaxRadius
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033256654833405645, guid: 87a8b1e683f48f94b87d9b2f890348a2, type: 3}
       propertyPath: Objects.Array.data[3].MinRadius
       value: 120
       objectReference: {fileID: 0}
@@ -2056,7 +2060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8627026308436671520, guid: 7909056193e52384fae8e512b5cd1b0f, type: 3}
       propertyPath: _enemyHealthIncrement
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8627026308436671520, guid: 7909056193e52384fae8e512b5cd1b0f, type: 3}
       propertyPath: _countIncrementWaveInterval
@@ -2064,7 +2068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8627026308436671520, guid: 7909056193e52384fae8e512b5cd1b0f, type: 3}
       propertyPath: _healthIncrementWaveInterval
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8627026308436671522, guid: 7909056193e52384fae8e512b5cd1b0f, type: 3}
       propertyPath: m_Name

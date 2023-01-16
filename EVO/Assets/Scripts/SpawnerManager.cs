@@ -66,7 +66,7 @@ public class SpawnerManager : MonoBehaviour
     {
         if(Spawners.Count == 0)
         {
-
+            OnSpawnersEmpty.Invoke();
         }
     }
 }
